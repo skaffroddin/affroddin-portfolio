@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with SVG Logo</title>
+  <style>
+    /* Basic styling for the navbar */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #333;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    /* Styling for the SVG logo */
+    .logo {
+      width: 120px;  /* Adjust size as needed */
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <!-- SVG Logo on the Left Side -->
+  <div class="logo">
+    <svg width="120" height="50" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="black" />
+      <text x="10" y="35" font-family="monospace" font-size="30" fill="lime" id="text">
+        affy();
+      </text>
+      
+      <!-- Blinking cursor -->
+      <rect x="110" y="10" width="10" height="30" fill="lime" id="cursor" />
+
+      <style>
+        @keyframes blink {
+          0% { opacity: 1; }
+          50% { opacity: 0; }
+          100% { opacity: 1; }
+        }
+
+        #cursor {
+          animation: blink 1s steps(2, start) infinite;
+        }
+
+        @keyframes typing {
+          from { stroke-dasharray: 0, 100; }
+          to { stroke-dasharray: 100, 0; }
+        }
+
+        #text {
+          stroke-dasharray: 100, 0;
+          stroke-dashoffset: 0;
+          animation: typing 2s steps(10) forwards;
+        }
+      </style>
+    </svg>
+  </div>
+
+  <!-- Navigation Links -->
+  <div>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+</body>
+</html>

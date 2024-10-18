@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affroddin's Portfolio</title>
+    <!-- Include Boxicons CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <!-- Include Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'JetBrains Mono', monospace;
+            color: #00ff80;
+            background-color: #0e0e0e;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        header {
+            background-color: #1c1c1c;
+            padding: 10px 20px; /* Adjusted padding for better spacing */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #00ff80;
+            box-sizing: border-box;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            color: #00ff80;
+            font-weight: bold;
+            text-shadow: none; /* Removed text shadow */
+            margin: 0 20px; /* Adjusted margin */
+            padding: 5px 0; /* Adjusted padding */
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 0 15px; /* Adjusted margin for better spacing */
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #00ff80;
+            font-size: 1em;
+            position: relative;
+            padding: 5px 0; /* Adjusted padding for better hover effect */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #00ff80;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        ul li a:hover::after {
+            transform: scaleX(1);
+        }
+
+        ul li a:hover {
+            color: #00cc66;
+            transform: translateY(-2px); /* Added slight lift effect on hover */
+        }
+
+        #hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('your-hero-background-image.jpg') no-repeat center center/cover;
+            padding: 0 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+            position: relative;
+            z-index: 1; /* Ensure it is above the matrix animation */
+        }
+
+        .hero-text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .hero-text h3 {
+            font-size: 1.8em;
+            margin: 0;
+            color: #00ff80;
+            text-shadow: 0 0 10px #00ff80;
+        }
+
+        .hero-text h1 {
+            font-size: 4em;
+            margin: 10px 0;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(0, 255, 128, 0.7);
+        }
+
+        .hero-text p {
+            font-size: 1.1em;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .home-sci {
+            margin: 20px 0;
+        }
+
+        .home-sci a {
+            text-decoration: none;
+            color: #00ff80;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        .home-sci a:hover {
+            color: #fff;
+        }
+
+        .btn-box {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #00ff80;
+            color: #0e0e0e;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 2px solid #00ff80;
+        }
+
+        .btn-box:hover {
+            background-color: red; /* Changed background color to red on hover */
+            color: #fff; /* Changed text color to white on hover */
+            border: 2px solid red; /* Changed border color to red on hover */
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 300px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 255, 128, 0.5);
+            border: 5px solid #00ff80;
+        }
+
+        /* Typing Effect Styles */
+        .pro-text {
+            font-weight: bold;
+            color: red; /* Change the color to red */
+            display: inline-block;
+            white-space: nowrap;
+            background: none; /* Remove background effect */
+            text-shadow:none;
+        }
+
+        .typed-cursor {
+            color: red;
+            text-shadow: none;
+        }
+
+        /* Matrix Animation Styles */
+        #matrixCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Ensure it is behind other content */
+            pointer-events: none; /* Allow clicks to pass through */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text, .hero-image {
+                max-width: 100%;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5em;
+            }
+
+            .hero-text p {
+                font-size: 1em;
+            }
+
+            .hero-image img {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+    <header>
+        <nav>
+            <div class="logo">Affy(!=0);</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h3>Hello, It's me</h3>
+                <h1>Affroddin</h1>
+                <h3>And I'm a <span class="pro-text"></span></h3>
+                <p>A skilled web developer and cyber security expert with a passion for creating innovative solutions. My expertise spans across web development and cyber security, allowing me to build secure and dynamic web applications.</p>
+                <div class="home-sci">
+                    <a href="https://github.com/SAI127001" target="_blank"><i class="bx bxl-github"></i></a>
+                    <a href="https://www.linkedin.com/in/terukula-sai/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://wa.me/9987886552" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/sai_127.0.0.1/" target="_blank"><i class="bx bxl-instagram"></i></a>
+                </div>
+                <a href="" class="btn-box" download="Sai CV/Resume">Download CV</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://ethical-hacker-template-sai.netlify.app/IMAGES/saianon.png" alt="Affy">
+            </div>
+        </div>
+    </section>
+    <script>
+        // Matrix Animation JavaScript
+        const canvas = document.getElementById("matrixCanvas");
+        const ctx = canvas.getContext("2d");
+        const canvasWidth = window.innerWidth;
+        const canvasHeight = window.innerHeight;
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+        const characters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
+        const columns = Math.floor(canvasWidth / 20);
+        const yPositions = [];
+        for (let i = 0; i < columns; i++) {
+            yPositions[i] = Math.random() * canvasHeight;
+        }
+        function updateMatrix() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+            ctx.fillStyle = "green";
+            ctx.font = "12px timesnewroman";
+            for (let i = 0; i < columns; i++) {
+                const character = characters[Math.floor(Math.random() * characters.length)];
+                const y = yPositions[i];
+                ctx.fillText(character, i * 20, y);
+                yPositions[i] += 20;
+                if (yPositions[i] > canvasHeight && Math.random() > 0.98) {
+                    yPositions[i] = 0;
+                }
+            }
+        }
+        function renderMatrix() {
+            requestAnimationFrame(renderMatrix);
+            updateMatrix();
+        }
+        renderMatrix();
+    </script>
+</body>
+</html>
