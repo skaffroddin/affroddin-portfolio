@@ -47,3 +47,7 @@ const typed = new Typed('.multiple-text', {
 
     observer.observe(document.querySelector(".skills-content"));
 });
+
+
+
+

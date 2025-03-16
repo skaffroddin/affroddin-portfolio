@@ -4,6 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio of Sekh Affroddin, a full-stack web developer specializing in web development, Laravel, PHP, and cybersecurity.">
+    <meta name="keywords"
+        content="Sekh Affroddin, web developer, full-stack developer, Laravel, PHP, cybersecurity, portfolio, responsive websites">
+    <meta name="author" content="Sekh Affroddin">
+    <meta name="google-site-verification" content="XN91EM6idMzwS6MPGO2HPcmWKwrpSUjoB0RxbUaEk98" />
+
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@800&display=swap" rel="stylesheet">
@@ -12,7 +19,7 @@
     <link rel="stylesheet" href="style.css">
 
 
-    <title>Sekh Affroddin - Portfolio</title>
+    <title>Sekh Affroddin, web developer, full-stack developer, Laravel, PHP, cybersecurity,responsive websites</title>
 </head>
 
 <body>
@@ -189,32 +196,13 @@
                         <h4>Kali Linux</h4>
                     </div>
                     <div class="skill-item">
-                        <img src="" alt="Burp Suite" class="skill-icon">
-                        <h4>Burp Suite</h4>
+                        <img src="https://gitlab.com/uploads/-/system/group/avatar/5034914/kali-logo-dragon-blue-transparent.png"
+                            alt="Kali Linux" class="skill-icon">
+                        <h4>Kali Linux</h4>
                     </div>
-                    <div class="skill-item">
-                        <img src="https://brandfetch.com/sqlmap.org?view=library&library=default&collection=logos&asset=idSA_IMx1J&utm_source=https%253A%252F%252Fbrandfetch.com%252Fsqlmap.org&utm_medium=copyAction&utm_campaign=brandPageReferral"
-                            alt="Burp Suite" class="skill-icon">
-                        <h4>Burp Suite</h4>
-                    </div>
-                    <div class="skill-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/burp-suite/burp-suite-original.svg"
-                            alt="Burp Suite" class="skill-icon">
-                        <h4>Burp Suite</h4>
-                    </div>
-                    <div class="skill-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/burp-suite/burp-suite-original.svg"
-                            alt="Burp Suite" class="skill-icon">
-                        <h4>Burp Suite</h4>
-                    </div>
-                    <div class="skill-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/burp-suite/burp-suite-original.svg"
-                            alt="Burp Suite" class="skill-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kali-linux/kali-linux-original.svg"
-                            alt="Kali Linux Logo" width="100">
 
-                        <h4>Burp Suite</h4>
-                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -383,6 +371,13 @@
         </form>
     </section>
 
+    <!-- Whatsapp buton  -->
+    <!-- <a href="https://wa.me/8240617824" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a> -->
+    <!-- Back to top  -->
+    <a href="#" class="back-to-top" id="backToTop" title="Back to top">&#8679;</a>
+
 
     <!-- Footer Section -->
     <footer class="footer">
@@ -409,12 +404,34 @@
         <p class="copyright">
             &copy; Affroddin | All Rights Reserved ❤️
         </p>
-        
+
     </footer>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
 
 </body>
+
+
+
+<script>
+    // Show or hide the button based on scroll position
+    const backToTopButton = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+
+    // Smooth scroll to top
+    backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
 
 </html>
