@@ -575,6 +575,9 @@ span {
 
 
 
+
+
+
     .contact form {
         padding: 8px;
     }
@@ -598,6 +601,22 @@ span {
     .navbar.active {
         right: 0;
     }
+
+
+
+
+
+    .dot {
+        width: 15px;
+        height: 15px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+        top: -46px;
+        left: -38px;
+        z-index: 1;
+    }    
+    
     .home {
         flex-direction: column;
     }
@@ -656,6 +675,44 @@ span {
         font-size: 5rem;
         text-align: center;
         margin: 2rem 0;
+    }
+}
+
+
+
+
+
+/* Dot blink */
+
+.dot {
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: -65px;
+    left: -41px;
+    z-index: 1;
+
+}
+
+.pulse {
+    position: relative;
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+        opacity: 1;
+    }
+    50% {
+        box-shadow: 0 0 15px 10px rgba(255, 0, 0, 0.3);
+        opacity: 0.7;
+    }
+    100% {
+        box-shadow: 0 0 30px 20px rgba(255, 0, 0, 0);
+        opacity: 0;
     }
 }
 
